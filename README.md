@@ -260,4 +260,15 @@ or [this one](./test_output/test.mp4)
 
 #### 1. Briefly discuss any problems/issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+#### Problems
+
+- it's hard to find the best threshold
+- the first time when I make perspectve transform , the order of src point and dest is not same, so the bird-view picture is actually up-side down but its hard to notice and it can infulence the result
+
+#### What Could Be Improved
+
+- the algo that I used will failed on challenge_video.mp4,still have no idea how to fix it yet
+- I should explore more color space ,such as LAB
+- I think I should use prior infomation of the lane lines as I did in projet one 
+
+
