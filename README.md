@@ -1,10 +1,7 @@
 #  Writeup 
 
-## You can use this file as a template for your write-up if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Advanced Lane Finding Project**
+------
 
 The goals/steps of this project are the following:
 
@@ -22,7 +19,7 @@ The goals/steps of this project are the following:
 
 ---
 
-###the implementation can be found [here](./main.ipynb)
+### the implementation can be found [here](./main.ipynb)
 
 
 ## Camera Calibration
