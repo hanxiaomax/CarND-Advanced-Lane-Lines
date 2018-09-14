@@ -1,19 +1,19 @@
 #  Writeup 
 
-## You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+## You can use this file as a template for your write-up if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
 **Advanced Lane Finding Project**
 
-The goals / steps of this project are the following:
+The goals/steps of this project are the following:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
 * Use color transforms, gradients, etc., to create a thresholded binary image.
 * Apply a perspective transform to rectify binary image ("birds-eye view").
 * Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
+* Determine the curvature of the lane and vehicle position with respect to the center.
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
@@ -22,11 +22,12 @@ The goals / steps of this project are the following:
 
 ---
 
+###the implementation can be found [here](./main.ipynb)
 
 
 ## Camera Calibration
 
-### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion-corrected calibration image.
 
 
 #### 1. Prepared the **object points** and **image points**
@@ -76,7 +77,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 ### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image .  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image.  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
 
 ![Undistort_test1](output_images/Undistort_test1-2.jpg)
@@ -183,12 +184,12 @@ note:the points should be clock-wise and start from the left-bottom, the **src**
 ![findline_undistort_test3.jpg](output_images/findline_undistort_test3.jpg.jpg)
 
 then we use **slide window** to find the lane pixels:
-1. define 10 windows , the window's height is the height of image divide num of windows 
+1. define 10 windows, the window's height is the height of image divide num of windows 
 2. loop through those windows
     - Identify window boundaries in x and y (and right and left)
-    - Identify the nonzero pixels in image and their index
+    - Identify the nonzero pixels in the image and their index
     - Identify the nonzero pixels in x and y within the window and append its index to each line
-    -  If we found > minpix pixels, recenter next window,the new center is the mean of pixels's co
+    -  If we found > minpix pixels, recenter next window, the new center is the mean of pixels' co
 3. Extract left and right line pixel positions
 
 ![find_lane_pixels](output_images/find_lane_pixels.jpg)
@@ -218,7 +219,7 @@ let me show you the result:
 
 
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to the center.
 
 First, we define the transformation rules to trans image pixels to real world length
 ```python
@@ -260,6 +261,6 @@ or [this one](./test_output/test.mp4)
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems/issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
